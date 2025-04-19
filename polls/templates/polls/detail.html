@@ -1,0 +1,10 @@
+<h1>Detail Page of {{ question.question_text | capfirst }}</h1>
+<p>Published on: {{ question.pub_date | date:"D d M Y" }}</p>
+
+<ul>
+  {% for choice in question.choice_set.all %}
+  <li>{{ choice.choice_text }}</li>
+  {% endfor %}
+</ul>
+
+<p>Back to <a href="{% url 'polls:index' %}">index</a></p>
